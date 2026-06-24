@@ -16,7 +16,8 @@ dt.get_recommend_weight(160)
 dt.print_valid_menu()
 print(dt.menu)
 
-# from 모듈 import 함수, 변수, 모듈
+# from 모듈 import 함수, 변수 
+# from 패키지 import 모듈A, 모듈B
 from diet import get_recommend_weight, print_valid_menu
 get_recommend_weight(160, False)
 print_valid_menu()
