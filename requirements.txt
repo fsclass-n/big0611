@@ -4,6 +4,7 @@ yfinance
 seaborn
 matplotlib
 plotly
+jupytext
 nbformat
 streamlit
 requests
