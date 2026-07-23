@@ -124,5 +124,7 @@ st.video('https://youtu.be/BU-DXvjGEqg?si=71Rc4xQ5OiCBVFvA', width=300)
 
 
 # 오디오 파일 재생
+# 유튜브 오디오 보관함: https://studio.youtube.com/channel/UCkCxjM7byQ3sQMBqmO7it6g/music
+# 무료 소리 창고: https://pgtd.tistory.com/270
 # mp3(노래), ogg(ogv), wav(미디음)
 st.audio('my_audio.mp3')
