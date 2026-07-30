@@ -155,6 +155,14 @@
     <time datetime=""></time>
     <data value=""></data>
 
+    <!-- wbr (Word Break Opportunity / 줄바꿈 기회 지점): 한 텍스트 줄이 길어서 브라우저 창 크기에 따라 자동으로 줄바꿈이 일어날 때, "만약 줄을 바꿔야 한다면 바로 이 지점에서 끊어서 줄을 바꿔라" 하고 위치를 지정해 줍니다. -->
+    <!-- 화면이 좁아지면 http:// -> example.com/ -> extremely/ -> long... 순서의 / 지점에서 줄바꿈됨 -->
+    <p>http://<wbr>example.com/<wbr>extremely/<wbr>long/<wbr>url/<wbr>link</p>
+
+    <!-- 아주 긴 영어 단어 줄바꿈 유도 -->
+    <p>Super<wbr>cali<wbr>fragi<wbr>listic<wbr>expiali<wbr>docious</p>
+
+
     <!-- 폼(form) -->
     <datalist></datalist>
     <meter value=""></meter>
@@ -181,9 +189,16 @@
     <bdo dir="ltr">안녕하세요</bdo>
     <bdo dir="rtl">안녕하세요</bdo>
 
-    <ruby></ruby>
-    <slot></slot>
-    <wbr></wbr>
+    <!-- ruby (주석/윗글자 표기): 동아시아 언어(한자, 일본어)에서 한자의 발음(주음, 윗글자)이나 뜻을 글자 위에 작게 달아줄 때 사용합니다. -->
+    <p>
+        <!-- 한국어 한자: 漢字 위에 한글 발음 표기 -->
+        <ruby>
+            漢 <rp>(</rp><rt>한</rt><rp>)</rp>
+            字 <rp>(</rp><rt>자</rt><rp>)</rp>
+        </ruby>
+    </p>
+
+    <slot>최신 웹 표준 기술인 Web Components(Shadow DOM)에서 재사용 가능한 커스텀 컴포넌트를 만들 때, 외부에서 넘겨주는 텍스트나 HTML 요소를 끼워 넣는 "빈 구멍(Placeholder)" 역할을 합니다.</slot>
 
 
     <!-- 7. Sectioning -->
