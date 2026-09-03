@@ -6,9 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input 속성</title>
     <style>
+
+        /* 선택자의 종류
+            1. 아이디, 클래스, 타입(태그)
+            2. 전체(*), 그룹(,)
+            3. 가상클래스(:)
+                - :link, :visited, :active, :hover
+                - :nth-child(), :nth-of-type(), ...
+            4. 가상요소클래스(::)
+                - ::after
+                - ::before
+                - ::placeholder, ...
+            5. 속성([])
+        */
+
         /* HTML size보다 CSS width가 우선 적용! */
+        /* 
+            1. 타입(태그) 선택자: input, a, div, ...
+            2. 가상클래스 선택자: :not()
+            3. 속성 선택자: [속성="값"]
+        
+        */
+
         input:not(input[type="submit"]) {
             width: 300px;
+        }
+
+        ::placeholder {
+            font-size: 10px;
+            color: rgba(255, 0, 0, .5);
+        }
+
+        input {
+            color: blue;
         }
     </style>
 </head>
@@ -37,13 +67,17 @@
             size: text, search, tel, url, email, password 입력 유형에서 작동
 
             required속성은 텍스트, 검색, URL, 전화번호, 이메일, 비밀번호, 날짜 선택기, 숫자, 체크박스, 라디오 버튼, 파일 등의 입력 유형과 함께 작동합니다.
+
+            autofocus속성은 페이지 로드 시 입력 필드가 자동으로 포커스를 받도록 지정
          -->
-        <label for="userid">First name:</label><br>
-        <input type="text" id="userid" name="userid" value="John" readonly size="50" required><br>
+        <label for="userid">ID:</label><br>
+        <input type="text" id="userid" name="userid" size="50" required minlength="4" maxlength="20"
+            pattern="[a-z0-9]{4,20}" title="영문 소문자와 숫자를 사용하여 4~20자로 입력하세요." placeholder="영문 소문자와 숫자를 사용하여 4~20자로 입력하세요."
+            autofocus><br>
         <label for="userpw">Last name:</label><br>
         <input type="password" id="userpw" name="userpw" value="Doe" disabled size="4"><br>
 
-        <input type="search" id="search" name="search" value="검색어" size="20"><br>
+        <input type="search" id="search" name="search" value="읽기전용" size="20" readonly><br>
         <input type="tel" id="tel" name="tel" value="010-1234-5678"><br>
         <input type="url" id="url" name="url" value="https://www.naver.com"><br>
         <input type="email" id="email" name="email" value="hong@naver.com"><br>
@@ -92,6 +126,28 @@
     <form>
         <label for="points">Points:</label>
         <input type="number" id="points" name="points" min="1" max="9" step="2">
+    </form>
+
+    <form>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+    </form>
+
+    <form action="/action_page.php" autocomplete="on">
+        <!-- 
+            autocomplete속성은 폼이나 입력 필드에 자동 완성 기능을 켜거나 끌지 여부를 지정
+            텍스트, 검색, URL, 전화번호, 이메일, 비밀번호, 날짜 선택기, 범위 및 색상 유형 <form>과 함께 작동
+          -->
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="off"><br><br>
+        <input type="submit" value="Submit">
     </form>
 
     <div style="height:500px;"></div>
