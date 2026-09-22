@@ -17,4 +17,6 @@ openpyxl
 pymysql
 scikit-learn
 graphviz
+xgboost
+lightgbm
 tensorflow
